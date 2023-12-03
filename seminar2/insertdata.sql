@@ -140,12 +140,12 @@ VALUES
             ('Flute', 'Beginner', '4', '8', '2023-11-30', '13:15', '4'),
             ('Saxophone', 'Intermediate', '8', '12', '2023-12-01', '16:00', '5');
 
- INSERT INTO individual_lesson(instrument, skill_level, instructor_id, student_id)
- VALUES      ('Piano', 'Intermediate',  1, 1),
-            ('Guitar', 'Beginner',  2, 2),
-             ('Violin', 'Advanced',  3, 3),
-             ('Flute', 'Intermediate',  4, 4),
-             ('Saxophone', 'Beginner',  5, 5);
+ INSERT INTO individual_lesson(instrument, skill_level, instructor_id, student_id, date)
+ VALUES      ('Piano', 'Intermediate',  1, 1, '2023-10-11'),
+            ('Guitar', 'Beginner',  2, 2, '2023-10-9'),
+             ('Violin', 'Advanced',  3, 3, '2023-9-11'),
+             ('Flute', 'Intermediate',  4, 4, '2023-12-24'),
+             ('Saxophone', 'Beginner',  5, 5, '2023-11-2');
 
  INSERT INTO ensemble(min_students, max_students, genre, date, time, instructor_id)
     VALUES
@@ -204,3 +204,37 @@ INSERT INTO ensemble_price(cost, lesson_id)
             ('90', '3'),
             ('139', '4'),
             ('84', '5');
+
+
+
+             INSERT INTO ensemble(min_students, max_students, genre, date, time, instructor_id)
+    VALUES
+            ('5', '10', 'Punk', '2023-12-5', '11:00', '1'),  
+            ('5', '10', 'Punk', '2023-12-6', '11:00', '1'),
+            ('5', '10', 'Punk', '2023-12-7', '11:00', '1');
+
+
+            INSERT INTO ensemble(min_students, max_students, genre, date, time, instructor_id)
+    VALUES
+            ('1', '3', 'Rock', '2023-12-8', '11:00', '1'),  
+            ('1', '1', 'Classical', '2023-12-9', '11:00', '1');
+
+            INSERT INTO student_ensemble_lesson(student_id, lesson_id)
+    VALUES
+             ('1', '9'),
+                ('2', '10');
+
+
+            INSERT INTO group_lesson(instrument, skill_level, min_students, max_students, date, time, instructor_id)
+    VALUES
+            ('Piano', 'Beginner', '5', '10', '2023-12-15', '11:00', '2'),
+            ('Flute', 'Beginner', '4', '8', '2023-12-5', '13:15', '3');
+
+ INSERT INTO individual_lesson(instrument, skill_level, instructor_id, student_id, date)
+ VALUES      ('Piano', 'Intermediate',  2, 1, '2023-12-11'),
+            ('Guitar', 'Beginner',  3, 2, '2023-12-9');
+        
+         INSERT INTO ensemble(min_students, max_students, genre, date, time, instructor_id)
+    VALUES
+            ('1', '3', 'Rock', '2023-12-10', '11:00', '2'),  
+            ('1', '1', 'Classical', '2023-12-11', '11:00', '3');

@@ -98,7 +98,7 @@ CREATE TABLE ensemble (
  min_students INT NOT NULL,
  max_students INT NOT NULL,
  genre VARCHAR(50) NOT NULL,
- date VARCHAR(50) NOT NULL,
+ date DATE NOT NULL,
  time VARCHAR(50) NOT NULL,
  instructor_id SERIAL NOT NULL
 );
@@ -121,7 +121,7 @@ CREATE TABLE group_lesson (
  skill_level VARCHAR(50) NOT NULL,
  min_students INT NOT NULL,
  max_students INT NOT NULL,
- date VARCHAR(50) NOT NULL,
+ date DATE NOT NULL,
  time VARCHAR(50) NOT NULL,
  instructor_id SERIAL NOT NULL
 );
@@ -143,7 +143,8 @@ CREATE TABLE individual_lesson (
  instrument VARCHAR(50) NOT NULL,
  skill_level VARCHAR(50) NOT NULL,
  instructor_id SERIAL NOT NULL,
- student_id SERIAL NOT NULL
+ student_id SERIAL NOT NULL,
+ date DATE
 );
 
 ALTER TABLE individual_lesson ADD CONSTRAINT PK_individual_lesson PRIMARY KEY (id);
@@ -152,7 +153,7 @@ ALTER TABLE individual_lesson ADD CONSTRAINT PK_individual_lesson PRIMARY KEY (i
 CREATE TABLE individual_lesson_price (
  id SERIAL NOT NULL,
  cost INT NOT NULL,
- lesson_id SERIAL
+ lesson_id SERIAL NOT NULL
 );
 
 ALTER TABLE individual_lesson_price ADD CONSTRAINT PK_individual_lesson_price PRIMARY KEY (id);
